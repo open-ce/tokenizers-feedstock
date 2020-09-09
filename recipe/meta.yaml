@@ -1,0 +1,52 @@
+{% set name = "tokenizers" %} 
+{% set version = "0.7.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/huggingface/tokenizers/archive/python-v{{ version }}.tar.gz
+  sha256: dc92c3f46fe03058c495663b1c125ce87722cad69167276465f9d2ce0284edf4
+
+build:
+  number: 1
+
+requirements:
+  host:
+    - pip {{ pip }}
+    - python {{ python }}
+    - rust-nightly {{ rust_nightly }}
+    - setuptools-rust {{ setuptools_rust }}
+  run:
+    - typing {{ typing }}
+    - python {{ python }}
+
+test:
+  imports:
+    - tokenizers
+    - tokenizers.decoders
+    - tokenizers.implementations
+    - tokenizers.models
+    - tokenizers.normalizers
+    - tokenizers.pre_tokenizers
+    - tokenizers.processors
+    - tokenizers.trainers
+  commands:
+    - python -c "from tokenizers import BertWordPieceTokenizer"
+    - python -c "from tokenizers import ByteLevelBPETokenizer"
+    - python -c "from tokenizers import CharBPETokenizer"
+    - python -c "from tokenizers import SentencePieceBPETokenizer"
+
+about:
+  home: https://github.com/huggingface/tokenizers
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE
+  summary: Fast State-of-the-Art Tokenizers optimized for Research and Production
+  description: Fast State-of-the-Art Tokenizers optimized for Research and Production
+  doc_url: https://huggingface.co/tokenizers/
+
+extra:
+  recipe-maintainers:
+    - open-ce/open-ce-dev-team
