@@ -1,25 +1,27 @@
 {% set name = "tokenizers" %} 
-{% set version = "0.7.0" %}
+{% set version = "0.9.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/huggingface/tokenizers/archive/python-v{{ version }}.tar.gz
-  sha256: dc92c3f46fe03058c495663b1c125ce87722cad69167276465f9d2ce0284edf4
+  git_url: https://github.com/huggingface/tokenizers.git
+  git_rev: python-v{{ version }}
 
 build:
   number: 1
 
 requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - {{ compiler('rust') }}
   host:
     - pip {{ pip }}
     - python {{ python }}
     - rust-nightly {{ rust_nightly }}
     - setuptools-rust {{ setuptools_rust }}
   run:
-    - typing {{ typing }}
     - python {{ python }}
 
 test:
