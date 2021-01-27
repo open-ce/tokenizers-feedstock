@@ -20,6 +20,7 @@ requirements:
     - pip {{ pip }}
     - python {{ python }}
     - rust-nightly {{ rust_nightly }}
+    - semantic_version # [py<37]
     - setuptools-rust {{ setuptools_rust }}
   run:
     - python {{ python }}
