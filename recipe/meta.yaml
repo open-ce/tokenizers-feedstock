@@ -1,5 +1,5 @@
 {% set name = "tokenizers" %} 
-{% set version = "0.9.3" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +10,7 @@ source:
   git_rev: python-v{{ version }}
 
 build:
-  number: 2
+  number: 1
 
 requirements:
   build:
@@ -20,7 +20,6 @@ requirements:
     - pip {{ pip }}
     - python {{ python }}
     - rust-nightly {{ rust_nightly }}
-    - semantic_version # [py<37]
     - setuptools-rust {{ setuptools_rust }}
   run:
     - python {{ python }}
@@ -28,13 +27,13 @@ requirements:
 test:
   imports:
     - tokenizers
-    - tokenizers.decoders
-    - tokenizers.implementations
     - tokenizers.models
+    - tokenizers.decoders
     - tokenizers.normalizers
     - tokenizers.pre_tokenizers
     - tokenizers.processors
     - tokenizers.trainers
+    - tokenizers.implementations
   commands:
     - python -c "from tokenizers import BertWordPieceTokenizer"
     - python -c "from tokenizers import ByteLevelBPETokenizer"
