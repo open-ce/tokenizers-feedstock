@@ -10,18 +10,24 @@ source:
   git_rev: python-v{{ version }}
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - pip {{ pip }}
     - python {{ python }}
     - rust-nightly {{ rust_nightly }}
     - semantic_version # [py<37]
     - setuptools-rust {{ setuptools_rust }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python {{ python }}
 
