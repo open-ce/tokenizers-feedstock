@@ -11,18 +11,30 @@ source:
 
 build:
   number: 1
+  ignore_run_exports:
+    - libgcc-ng
+    - libstdcxx-ng
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - pip {{ pip }}
     - python {{ python }}
     - rust-nightly {{ rust_nightly }}
     - setuptools-rust {{ setuptools_rust }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python {{ python }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
 
 test:
   imports:
