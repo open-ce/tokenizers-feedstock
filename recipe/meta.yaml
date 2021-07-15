@@ -1,4 +1,4 @@
-{% set name = "tokenizers" %} 
+{% set name = "tokenizers" %}
 {% set version = "0.10.1" %}
 
 package:
@@ -10,10 +10,7 @@ source:
   git_rev: python-v{{ version }}
 
 build:
-  number: 1
-  ignore_run_exports:
-    - libgcc-ng
-    - libstdcxx-ng
+  number: 2
 
 requirements:
   build:
@@ -32,9 +29,6 @@ requirements:
     - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python {{ python }}
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
 
 test:
   imports:
