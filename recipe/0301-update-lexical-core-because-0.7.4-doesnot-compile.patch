@@ -1,0 +1,53 @@
+From 03c76eb68b480f23e3143e91d7d3c647243a272f Mon Sep 17 00:00:00 2001
+From: Koichi Yasuoka <yasuoka@kanji.zinbun.kyoto-u.ac.jp>
+Date: Fri, 16 Jul 2021 17:10:46 +0900
+Subject: [PATCH 1/2] update lexical-core because 0.7.4 doesn't compile
+
+Fix the issue as described in https://github.com/rust-lang/rust/issues/81654
+---
+ bindings/python/Cargo.lock | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/bindings/python/Cargo.lock b/bindings/python/Cargo.lock
+index 08ab51ea..2902f560 100644
+--- a/bindings/python/Cargo.lock
++++ b/bindings/python/Cargo.lock
+@@ -407,9 +407,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+ 
+ [[package]]
+ name = "lexical-core"
+-version = "0.7.4"
++version = "0.7.6"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "db65c6da02e61f55dae90a0ae427b2a5f6b3e8db09f58d10efab23af92592616"
++checksum = "6607c62aa161d23d17a9072cc5da0be67cdfc89d3afb1e8d9c842bebc2525ffe"
+ dependencies = [
+  "arrayvec",
+  "bitflags",
+
+From c234b6e475388ccad50aa51a18f2129b0bdcd9aa Mon Sep 17 00:00:00 2001
+From: Koichi Yasuoka <yasuoka@kanji.zinbun.kyoto-u.ac.jp>
+Date: Fri, 16 Jul 2021 17:14:24 +0900
+Subject: [PATCH 2/2] update lexical-core because 0.7.4 doesn't compile
+
+Fix the issue as described in https://github.com/rust-lang/rust/issues/81654
+---
+ bindings/node/native/Cargo.lock | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/bindings/node/native/Cargo.lock b/bindings/node/native/Cargo.lock
+index 63d120e3..5c85c547 100644
+--- a/bindings/node/native/Cargo.lock
++++ b/bindings/node/native/Cargo.lock
+@@ -347,9 +347,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+ 
+ [[package]]
+ name = "lexical-core"
+-version = "0.7.4"
++version = "0.7.6"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "db65c6da02e61f55dae90a0ae427b2a5f6b3e8db09f58d10efab23af92592616"
++checksum = "6607c62aa161d23d17a9072cc5da0be67cdfc89d3afb1e8d9c842bebc2525ffe"
+ dependencies = [
+  "arrayvec",
+  "bitflags",
