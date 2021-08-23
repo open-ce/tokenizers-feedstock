@@ -8,9 +8,11 @@ package:
 source:
   git_url: https://github.com/huggingface/tokenizers.git
   git_rev: python-v{{ version }}
+  patches:
+    - 0301-update-lexical-core-because-0.7.4-doesnot-compile.patch
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
