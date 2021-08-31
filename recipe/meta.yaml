@@ -1,5 +1,5 @@
 {% set name = "tokenizers" %}
-{% set version = "0.10.1" %}
+{% set version = "0.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
     - 0301-update-lexical-core-because-0.7.4-doesnot-compile.patch
 
 build:
-  number: 3
+  number: 1
 
 requirements:
   build:
