@@ -18,11 +18,11 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
-    - rust {{ rust }}
   host:
     - pip {{ pip }}
     - python {{ python }}
     - setuptools-rust {{ setuptools_rust }}
+    - rust {{ rust }}
   run:
     - python {{ python }}
 
