@@ -24,9 +24,9 @@ requirements:
   host:
     - pip {{ pip }}
     - python {{ python }}
-    - rust-nightly {{ rust_nightly }}
     - semantic_version # [py<37]
     - setuptools-rust {{ setuptools_rust }}
+    - rust {{ rust }}
     # Use pins to control cos6/cos7 match
     - libgcc-ng  {{ libgcc }}
     - libstdcxx-ng  {{ libstdcxx }}
