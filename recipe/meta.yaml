@@ -1,5 +1,5 @@
 {% set name = "tokenizers" %} 
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
     - 0301-update-lexical-core-because-0.7.4-doesnot-compile.patch
 
 build:
-  number: 5
+  number: 1
 
 requirements:
   build:
@@ -24,9 +24,9 @@ requirements:
   host:
     - pip {{ pip }}
     - python {{ python }}
-    - rust-nightly {{ rust_nightly }}
     - semantic_version # [py<37]
     - setuptools-rust {{ setuptools_rust }}
+    - rust {{ rust }}
     # Use pins to control cos6/cos7 match
     - libgcc-ng  {{ libgcc }}
     - libstdcxx-ng  {{ libstdcxx }}
