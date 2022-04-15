@@ -16,6 +16,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    - pkg-config {{ pkg_config }}
   host:
     - pip {{ pip }}
     - python {{ python }}
