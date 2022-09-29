@@ -1,0 +1,18 @@
+tests:
+  - name: Setup Tokenizers Tests
+    command: |
+        conda install -y git
+        git clone https://github.com/huggingface/tokenizers.git
+        cd tokenizers/
+        git checkout python-v0.11.4
+        conda install -y pytest
+        pip install datasets
+  - name: Run Tokenizers tests
+    command: |
+        cd tokenizers/
+        SKIPPED_TESTS="not test_trainers and not test_encoding and not test_models and not test_pipeline and not test_byte_level_bpe and not test_char_bpe and not test_bert_wordpiece and not test_tokenizer and not test_quicktour and not test_serialization and not test_tutorial_train_from_iterators and not test_processors"
+        pytest -v -k "${SKIPPED_TESTS}" bindings/python/tests/
+  - name: Clean tests
+    command: |
+        rm -rf tokenizers
+                                                                                            
