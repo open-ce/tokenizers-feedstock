@@ -16,7 +16,7 @@
 # *****************************************************************
 
 cd bindings/python
-
+export OPENSSL_DIR=$PREFIX
 python setup.py install --single-version-externally-managed --record record.txt
 
 exit 0
