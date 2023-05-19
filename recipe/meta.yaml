@@ -10,13 +10,13 @@ source:
   git_rev: python-v{{ version }}
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
-    - pkg-config {{ pkg_config }}
+    - pkg-config {{ pkgconfig }}
     - rust {{ rust }}
   host:
     - pip {{ pip }}
